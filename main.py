@@ -15,7 +15,6 @@ def main():
 	rootDomain = args.rootdomain
 	requiredEmail = args.requiredemail
 	doApi.entry(doApiKey=doAPIKey, requestedDomain=requestedDomain, rootDomain=rootDomain, requiredEmail=requiredEmail)
-	# python3 .\main.py --apikey "DOAPI" --requesteddomain "@" --rootdomain "romanrii.com" --requiredemail "roman.rivas@romanrii.com"
 
 if __name__ == "__main__":
 	main()
