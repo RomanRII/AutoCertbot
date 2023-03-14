@@ -12,6 +12,15 @@ class doApi:
 		pubCert, keyCert = doApi.executeDroplet(dropletIP=ipAddress, requestedHostname=requestedDomain, rootDomain=rootDomain, requiredEmail=requiredEmail)
 		doApi.cleanupDO(doAPIKey=doApiKey, dropletID=dropletID, firewallID=firewallID)
 
+		print("Public Certificate:\n")
+		for pubLine in pubCert:
+			pubLine = pubLine.strip('\n')
+			print(pubLine)
+		print("\nPrivKey Certificate:\n")
+		for privLine in keyCert:
+			privLine = privLine.strip('\n')
+			print(privLine)
+
 	# 1. Create the droplet and get the IPv4 address.
 	def createDroplet(doAPIKey):
 		print("[+] Creating the droplet")
@@ -143,7 +152,7 @@ class doApi:
 
 		return retPubCert, retKeyCert
 	
-	# 5. Cleanup. Remove the droplet, firewall. DNS record is not removed to allow the consultant/user to modify the record when ready. 
+	# 5. Cleanup. Remove the droplet, firewall and DNS record. 
 	def cleanupDO(doAPIKey, dropletID, firewallID):
 		droplet = Droplet(token=doAPIKey, id=dropletID)
 		droplet.destroy()
