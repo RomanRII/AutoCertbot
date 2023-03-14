@@ -143,7 +143,7 @@ class doApi:
 
 		return retPubCert, retKeyCert
 	
-	# 5. Cleanup. Remove the droplet, firewall and DNS record. 
+	# 5. Cleanup. Remove the droplet, firewall. DNS record is not removed to allow the consultant/user to modify the record when ready. 
 	def cleanupDO(doAPIKey, dropletID, firewallID):
 		droplet = Droplet(token=doAPIKey, id=dropletID)
 		droplet.destroy()
