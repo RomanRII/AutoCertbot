@@ -23,7 +23,7 @@ class doApi:
 
 	# 1. Create the droplet and get the IPv4 address.
 	def createDroplet(doAPIKey):
-		print("[+] Creating the droplet")
+		print("[*] Creating the droplet")
 		manager = Manager(token=doAPIKey)
 		keys = manager.get_all_sshkeys()
 
@@ -35,7 +35,7 @@ class doApi:
 			       	ssh_keys=keys,
                             	backups=False)
 		droplet.create()
-		print("[+] Droplet is now being created.. This should take <40 seconds")
+		print("[*] Droplet is now being created.. This should take <40 seconds")
 		time.sleep(40)
 		actions = droplet.get_actions()
 		for action in actions:
