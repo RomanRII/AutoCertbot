@@ -32,7 +32,7 @@ class doApi:
                             	region='nyc2', # New York 2
                             	image='ubuntu-20-04-x64', # Ubuntu 20.04 x64
                             	size_slug='s-1vcpu-1gb',  # 1GB RAM, 1 vCPU
-			       				ssh_keys=keys,
+			       	ssh_keys=keys,
                             	backups=False)
 		droplet.create()
 		print("[+] Droplet is now being created.. This should take <40 seconds")
