@@ -20,6 +20,7 @@ class doApi:
 		for privLine in keyCert:
 			privLine = privLine.strip('\n')
 			print(privLine)
+		print('\n')
 
 	# 1. Create the droplet and get the IPv4 address.
 	def createDroplet(doAPIKey):
